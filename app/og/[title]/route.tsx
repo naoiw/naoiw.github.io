@@ -9,11 +9,12 @@ export function generateStaticParams() {
   return [...titles, { title: 'naoiw' }]
 }
 
-export function GET(
+export async function GET(
   _request: Request,
-  { params }: { params: { title: string } }
+  { params }: { params: Promise<{ title: string }> }
 ) {
-  let title = decodeURIComponent(params.title) || 'naoiw'
+  let { title: rawTitle } = await params
+  let title = decodeURIComponent(rawTitle) || 'naoiw'
 
   return new ImageResponse(
     (
