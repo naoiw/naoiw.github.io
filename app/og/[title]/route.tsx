@@ -1,8 +1,19 @@
 import { ImageResponse } from 'next/og'
+import { getBlogPosts } from 'app/blog/utils'
 
-export function GET(request: Request) {
-  let url = new URL(request.url)
-  let title = url.searchParams.get('title') || 'Next.js Portfolio Starter'
+export const dynamic = 'force-static'
+
+export function generateStaticParams() {
+  let posts = getBlogPosts()
+  let titles = posts.map((p) => ({ title: p.metadata.title }))
+  return [...titles, { title: 'naoiw' }]
+}
+
+export function GET(
+  _request: Request,
+  { params }: { params: { title: string } }
+) {
+  let title = decodeURIComponent(params.title) || 'naoiw'
 
   return new ImageResponse(
     (
