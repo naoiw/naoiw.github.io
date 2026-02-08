@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
@@ -95,10 +96,23 @@ export default async function Blog({
       <h1 className="title font-semibold text-2xl tracking-tighter">
         {post.metadata.title}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-2 mb-8 text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {formatDate(post.metadata.publishedAt)}
         </p>
+        {(post.metadata.tags ?? []).length > 0 && (
+          <span className="flex flex-wrap gap-2">
+            {(post.metadata.tags ?? []).map((tag) => (
+              <Link
+                key={tag}
+                href={`/blog/tag/${encodeURIComponent(tag)}`}
+                className="text-neutral-500 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 underline underline-offset-2"
+              >
+                {tag}
+              </Link>
+            ))}
+          </span>
+        )}
       </div>
       <article className="prose">
         <CustomMDX source={post.content} />

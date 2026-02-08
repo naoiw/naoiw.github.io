@@ -1,4 +1,4 @@
-import { getBlogPosts } from 'app/blog/utils'
+import { getBlogPosts, getAllTags } from 'app/blog/utils'
 
 export const baseUrl = 'https://naoiw.github.io'
 
@@ -10,10 +10,15 @@ export default async function sitemap() {
     lastModified: post.metadata.publishedAt,
   }))
 
-  let routes = ['', '/blog'].map((route) => ({
+  let routes = ['', '/blog', '/tag'].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }))
 
-  return [...routes, ...blogs]
+  let tagPages = getAllTags().map((tag) => ({
+    url: `${baseUrl}/blog/tag/${encodeURIComponent(tag)}`,
+    lastModified: new Date().toISOString().split('T')[0],
+  }))
+
+  return [...routes, ...blogs, ...tagPages]
 }

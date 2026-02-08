@@ -6,6 +6,7 @@ type Metadata = {
   publishedAt: string
   summary: string
   image?: string
+  tags?: string[]
 }
 
 function parseFrontmatter(fileContent: string) {
@@ -14,16 +15,32 @@ function parseFrontmatter(fileContent: string) {
   let frontMatterBlock = match![1]
   let content = fileContent.replace(frontmatterRegex, '').trim()
   let frontMatterLines = frontMatterBlock.trim().split('\n')
-  let metadata: Partial<Metadata> = {}
+  let raw: Record<string, string> = {}
 
   frontMatterLines.forEach((line) => {
     let [key, ...valueArr] = line.split(': ')
     let value = valueArr.join(': ').trim()
     value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
-    metadata[key.trim() as keyof Metadata] = value
+    raw[key.trim()] = value
   })
 
-  return { metadata: metadata as Metadata, content }
+  const tagsRaw = raw.tags
+  const tags = !tagsRaw
+    ? []
+    : tagsRaw
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean)
+
+  const metadata: Metadata = {
+    title: raw.title ?? '',
+    publishedAt: raw.publishedAt ?? '',
+    summary: raw.summary ?? '',
+    image: raw.image,
+    tags,
+  }
+
+  return { metadata, content }
 }
 
 function getMDXFiles(dir) {
@@ -51,6 +68,22 @@ function getMDXData(dir) {
 
 export function getBlogPosts() {
   return getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'))
+}
+
+export function getAllTags(): string[] {
+  const posts = getBlogPosts()
+  const tagSet = new Set<string>()
+  posts.forEach((post) => {
+    (post.metadata.tags ?? []).forEach((t) => tagSet.add(t))
+  })
+  return Array.from(tagSet)
+}
+
+export function getPostsByTag(tag: string) {
+  const decoded = decodeURIComponent(tag)
+  return getBlogPosts().filter((post) =>
+    (post.metadata.tags ?? []).some((t) => t === decoded)
+  )
 }
 
 export function formatDate(date: string, includeRelative = false) {
