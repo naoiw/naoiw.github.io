@@ -4,6 +4,7 @@ const navItems = [
   { path: '/', name: 'home' },
   { path: '/blog', name: 'blog' },
   { path: '/tag', name: 'tag' },
+  { path: '/product', name: 'products' },
 ]
 
 export function Navbar() {
