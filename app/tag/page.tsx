@@ -7,7 +7,7 @@ export const metadata = {
 }
 
 export default function Page() {
-  const tags = getAllTags()
+  const tags = [...getAllTags()].sort((a, b) => a.localeCompare(b))
 
   return (
     <section>
