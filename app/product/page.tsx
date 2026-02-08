@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="mb-8 font-semibold text-2xl tracking-tighter">
-        Product
+        Products
       </h1>
       <div className="grid gap-4">
         {products.map((product) => (

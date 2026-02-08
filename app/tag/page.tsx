@@ -11,7 +11,7 @@ export default function Page() {
 
   return (
     <section>
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">tag</h1>
+      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">Tag</h1>
       {tags.length === 0 ? (
         <p className="text-neutral-600 dark:text-neutral-400">
           タグはまだありません。
