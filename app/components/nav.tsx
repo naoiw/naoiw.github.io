@@ -3,6 +3,7 @@ import Link from 'next/link'
 const navItems = [
   { path: '/', name: 'home' },
   { path: '/blog', name: 'blog' },
+  { path: '/tag', name: 'tag' },
 ]
 
 export function Navbar() {
