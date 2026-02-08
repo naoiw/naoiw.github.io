@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { products } from 'app/product/products'
 
 export const metadata = {
-  title: 'Product',
+  title: 'Products',
   description: '他リポジトリで開発したアプリケーション一覧',
 }
 
