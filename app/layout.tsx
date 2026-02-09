@@ -60,8 +60,12 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
-          <Analytics />
-          <SpeedInsights />
+          {process.env.VERCEL === '1' && (
+            <>
+              <Analytics />
+              <SpeedInsights />
+            </>
+          )}
         </main>
       </body>
     </html>
