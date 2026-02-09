@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { formatDate, getPostsByTag, getAllTags } from 'app/blog/utils'
+import { formatDate, getPostsByTag, getAllTags, tagToSlug, slugToTag } from 'app/blog/utils'
 
 export async function generateStaticParams() {
   const tags = getAllTags()
   return tags.map((tag) => ({
-    tag: encodeURIComponent(tag),
+    tag: tagToSlug(tag),
   }))
 }
 
@@ -13,11 +13,11 @@ export async function generateMetadata({
 }: {
   params: Promise<{ tag: string }>
 }) {
-  const { tag } = await params
-  const decoded = decodeURIComponent(tag)
+  const { tag: slug } = await params
+  const tagName = slugToTag(slug)
   return {
-    title: `tag: ${decoded}`,
-    description: `Articles tagged with "${decoded}".`,
+    title: `tag: ${tagName}`,
+    description: `Articles tagged with "${tagName}".`,
   }
 }
 
@@ -26,9 +26,9 @@ export default async function Page({
 }: {
   params: Promise<{ tag: string }>
 }) {
-  const { tag } = await params
-  const decoded = decodeURIComponent(tag)
-  const posts = getPostsByTag(tag).sort((a, b) => {
+  const { tag: slug } = await params
+  const tagName = slugToTag(slug)
+  const posts = getPostsByTag(slug).sort((a, b) => {
     if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
       return -1
     }
@@ -38,7 +38,7 @@ export default async function Page({
   return (
     <section>
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter">
-        tag: {decoded}
+        tag: {tagName}
       </h1>
       {posts.length === 0 ? (
         <p className="text-neutral-600 dark:text-neutral-400">

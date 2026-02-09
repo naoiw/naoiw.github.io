@@ -79,10 +79,28 @@ export function getAllTags(): string[] {
   return Array.from(tagSet)
 }
 
-export function getPostsByTag(tag: string) {
-  const decoded = decodeURIComponent(tag)
+/**
+ * タグを URL セーフなスラッグに変換（GitHub Pages 等で Unicode/空白が原因のエラーを防ぐ）
+ */
+export function tagToSlug(tag: string): string {
+  const base64 = Buffer.from(tag, 'utf8').toString('base64')
+  return base64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
+}
+
+/**
+ * スラッグを元のタグに復元
+ */
+export function slugToTag(slug: string): string {
+  let base64 = slug.replace(/-/g, '+').replace(/_/g, '/')
+  const pad = base64.length % 4
+  if (pad) base64 += '='.repeat(4 - pad)
+  return Buffer.from(base64, 'base64').toString('utf8')
+}
+
+export function getPostsByTag(slug: string) {
+  const tag = slugToTag(slug)
   return getBlogPosts().filter((post) =>
-    (post.metadata.tags ?? []).some((t) => t === decoded)
+    (post.metadata.tags ?? []).some((t) => t === tag)
   )
 }
 

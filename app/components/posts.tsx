@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
+import { formatDate, getBlogPosts, tagToSlug } from 'app/blog/utils'
 
 export function BlogPosts() {
   let allBlogs = getBlogPosts()
@@ -35,7 +35,7 @@ export function BlogPosts() {
                 {(post.metadata.tags ?? []).map((tag) => (
                   <Link
                     key={tag}
-                    href={`/blog/tag/${encodeURIComponent(tag)}`}
+                    href={`/blog/tag/${tagToSlug(tag)}`}
                     className="text-xs text-neutral-500 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 underline underline-offset-2"
                   >
                     {tag}

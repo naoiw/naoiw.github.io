@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getAllTags } from 'app/blog/utils'
+import { getAllTags, tagToSlug } from 'app/blog/utils'
 
 export const metadata = {
   title: 'Tag',
@@ -21,7 +21,7 @@ export default function Page() {
           {tags.map((tag) => (
             <li key={tag}>
               <Link
-                href={`/blog/tag/${encodeURIComponent(tag)}`}
+                href={`/blog/tag/${tagToSlug(tag)}`}
                 className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 underline underline-offset-2"
               >
                 {tag}
