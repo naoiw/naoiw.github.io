@@ -9,7 +9,7 @@ import { baseUrl } from './sitemap'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   icons: {
-    icon: '/favicon.ico',
+    icon: `${baseUrl}/favicon.ico`,
   },
   title: {
     default: 'naoiw',
