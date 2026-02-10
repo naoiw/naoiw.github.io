@@ -12,6 +12,11 @@ export const products: Product[] = [
     url: 'https://naoiw.github.io/sudoku-solver/',
   },
   {
+    name: 'CoffeeScript Time Art',
+    summary: '時刻を良い感じに表示するページ',
+    url: 'https://naoiw.github.io/coffee-clock-view/',
+  },
+  {
     name: 'c17 code generator(開発中)',
     summary: 'エプソン製マイコンc17シリーズの開発を補助するためのツール',
     url: 'https://c17-code-generator.vercel.app/',
