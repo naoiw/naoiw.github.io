@@ -7,14 +7,19 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    name: 'sudoku-solver',
-    summary: '数独を解くツール',
-    url: 'https://naoiw.github.io/sudoku-solver/',
+    name: 'switchbot-logger',
+    summary: '自室の温湿度データが見れるアプリ',
+    url: 'https://naoiw.github.io/switchbot-logger/',
   },
   {
     name: 'CoffeeScript Time Art',
-    summary: '時刻を良い感じに表示するページ',
+    summary: '時刻を良い感じに表示するアプリ',
     url: 'https://naoiw.github.io/coffee-clock-view/',
+  },
+  {
+    name: 'sudoku-solver',
+    summary: '数独を解くツール',
+    url: 'https://naoiw.github.io/sudoku-solver/',
   },
   {
     name: 'c17 code generator(開発中)',
