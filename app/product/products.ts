@@ -22,6 +22,11 @@ export const products: Product[] = [
     url: 'https://naoiw.github.io/sudoku-solver/',
   },
   {
+    name: 'React GUI Tool',
+    summary: 'シリアル通信で取得した値をプロットするツール',
+    url: 'https://naoiw.github.io/react-gui-tool/',
+  },
+  {
     name: 'c17 code generator(開発中)',
     summary: 'エプソン製マイコンc17シリーズの開発を補助するためのツール',
     url: 'https://c17-code-generator.vercel.app/',
