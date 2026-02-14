@@ -7,6 +7,11 @@ export type Product = {
 
 export const products: Product[] = [
   {
+    name: '精進の記録',
+    summary: 'BIG3と体重を記録して表示するアプリ',
+    url: 'https://naoiw.github.io/big3-record/',
+  },
+  {
     name: 'switchbot-logger',
     summary: '自室の温湿度データが見れるアプリ',
     url: 'https://naoiw.github.io/switchbot-logger/',
