@@ -22,6 +22,9 @@
 
 - サイト名は原則 `font-weight: 800`、`letter-spacing: .02em`。ブランドアイコンは36×36pxを基準にする。
 - ヘッダーとフッターの区切り線は残し、線色は各サイトのテーマに合わせる。
+- **区切り線は画面端・ページコンテナ端まで伸ばさず、コンテンツの内側に引く。** 最大幅1180pxのコンテナから左右 `--chrome-gutter` ずつ内側の位置を両端とする（PC 28px / 幅620px以下 17px）。
+- ページコンテナ自身に `padding-inline` がある場合、ヘッダー・フッター内部に `border` を引くか、`::before` / `::after` を使って `left/right: var(--chrome-gutter)` とする。**コンテナ自体に `border-top` / `border-bottom` を引かない。**
+- `market-tracker` は本文下余白40pxを基準とし、コンテンツが短い場合でもフッターを画面下部に置く。
 - フッターは上28px・下32pxの余白、`font-weight: 500`、`letter-spacing: .02em`。
 - 右側のGitHubリンクは `GitHub ↗`。リンク先は各リポジトリ。
 - `sudoku-solver` のライトテーマは維持する。背景やアクセントカラーまで強制的に揃えない。
