@@ -42,7 +42,10 @@ Windows PowerShellでは`$env:NEXT_PUBLIC_BASE_PATH='/develop'; pnpm build`と�
 ## 表示の修正
 
 - 画面レイアウト: `app/page.tsx`
-- カード・絞り込み: `app/components/project-gallery.tsx`
+- カテゴリ選択・絞り込み: `app/components/project-gallery.tsx`
+- カード表示・公開先リンク: `app/components/project-card.tsx`
+- 作品型・カテゴリ表示名: `app/projects.ts`
+- 本番・プレビューのURL/パス定義: `app/site-config.ts`
 - 配色・列数・ブレークポイント: `app/global.css`
 
 カード全体をリンクで囲って別のリンクを内包することは避け、アプリとソースは独立したリンクにしている。

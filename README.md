@@ -48,9 +48,11 @@ pnpm build   # 静的ファイルを out/ に生成
 ## ディレクトリ構成
 
 - `app/page.tsx` — 1ページのトップ画面
-- `app/components/project-gallery.tsx` — カードとカテゴリ切り替え
+- `app/components/project-gallery.tsx` — カテゴリ切り替えと一覧
+- `app/components/project-card.tsx` — 作品カードの表示
 - `app/projects.json` — 掲載作品のデータ
 - `app/projects.ts` — 作品データの型とカテゴリ定義
+- `app/site-config.ts` — 共通サイトURLと開発プレビューのパス
 - `app/global.css` — 共通・レスポンシブスタイル
 - `tests/` — 作品データのバリデーション
 - `.github/workflows/` — `develop`検証と本番・プレビュー統合デプロイ
