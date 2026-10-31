@@ -63,8 +63,8 @@ a:focus-visible, button:focus-visible {
 }
 
 .header-inner {
+  position: relative;
   min-height: var(--chrome-header-height);
-  border-bottom: 1px solid #233248;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -304,7 +304,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .site-footer {
-  border-top: 1px solid #233248;
+  position: relative;
   padding-top: 28px;
   padding-bottom: 32px;
   display: flex;
@@ -316,6 +316,20 @@ a:focus-visible, button:focus-visible {
   letter-spacing: .02em;
   color: #829bb0;
 }
+
+/* Chrome dividers stop at the inner content edges, not the page-container edges. */
+.header-inner::after,
+.site-footer::before {
+  content: "";
+  position: absolute;
+  left: var(--chrome-gutter);
+  right: var(--chrome-gutter);
+  border-top: 1px solid #233248;
+  pointer-events: none;
+}
+
+.header-inner::after { bottom: 0; }
+.site-footer::before { top: 0; }
 
 .site-footer a {
   text-decoration: none;
