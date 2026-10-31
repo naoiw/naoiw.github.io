@@ -11,14 +11,6 @@ export default function Page() {
             <span className="brand-mark" aria-hidden="true">n</span>
             <span>naoiw</span>
           </a>
-          <a
-            className="header-link"
-            href="https://github.com/naoiw"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub <span aria-hidden="true">↗</span>
-          </a>
         </div>
       </header>
 
