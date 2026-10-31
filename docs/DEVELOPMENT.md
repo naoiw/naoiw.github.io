@@ -14,6 +14,21 @@ pnpm build
 
 `pnpm build`はNext.jsの静的エクスポートを作成し、`out/`にHTML・CSS・JSを生成する。
 
+## 開発プレビューの確認
+
+`develop`にpushすると、`Validate develop`ワークフローがテストと`/develop`向けのビルドを実行する。成功後、`main`に置かれた`Deploy to GitHub Pages`ワークフローが、本番と開発版の両方をビルドして公開する。
+
+- 本番: https://naoiw.github.io/
+- 開発版: https://naoiw.github.io/develop/
+
+ローカルで`/develop/`配下のビルドを確認する場合は、ビルド時に`NEXT_PUBLIC_BASE_PATH=/develop`を設定する。
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/develop pnpm build
+```
+
+Windows PowerShellでは`$env:NEXT_PUBLIC_BASE_PATH='/develop'; pnpm build`とする。通常のルート向けビルドでは環境変数を設定しない。
+
 ## 作品を増やす
 
 1. 公開先のHTTPS URLとGitHubリポジトリURLを確認する。
@@ -38,4 +53,5 @@ pnpm build
 - フィルター切替後もリンク先と件数が正しいこと
 - キーボードだけでフィルター・リンクにアクセスできること
 - 重複した作品ID・URLがないこと
+- `/develop/`でJS・CSSが `/develop/_next/` から取得されること
 - ブログ・RSS・タグの新しいリンクが残っていないこと
