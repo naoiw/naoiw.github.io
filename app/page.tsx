@@ -28,7 +28,7 @@ export default function Page() {
       <footer className="site-footer">
         <span>© {new Date().getFullYear()} naoiw</span>
         <a href="https://github.com/naoiw/naoiw.github.io" target="_blank" rel="noopener noreferrer">
-          Source on GitHub ↗
+          GitHub ↗
         </a>
       </footer>
     </div>
