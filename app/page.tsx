@@ -1,30 +1,42 @@
-import Image from 'next/image'
-import { BlogPosts } from 'app/components/posts'
+import { ProjectGallery } from './components/project-gallery'
 
 export default function Page() {
   return (
-    <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        Home
-      </h1>
-      <p className="mb-8 text-neutral-600 dark:text-neutral-400">
-        naoiw のウェブサイトへようこそ。
-      </p>
-      <div className="mb-8 w-full">
-        <Image
-          src="/welcome.jpg"
-          alt="ホーム画像"
-          width={576}
-          height={324}
-          className="w-full h-auto rounded-lg"
-          sizes="(max-width: 640px) 100vw, 576px"
-          priority
-        />
-      </div>
-      <div className="my-8">
-        <h2 className="mb-4 text-lg font-medium">最近の記事</h2>
-        <BlogPosts />
-      </div>
-    </section>
+    <div className="site-shell">
+      <header className="site-header">
+        <div className="header-inner">
+          <a className="site-brand" href="/" aria-label="naoiw ホーム">
+            <span className="brand-mark" aria-hidden="true">n</span>
+            <span>naoiw</span>
+          </a>
+          <a
+            className="header-link"
+            href="https://github.com/naoiw"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </header>
+
+      <main className="site-main">
+        <section className="intro" aria-labelledby="site-title">
+          <p className="eyebrow">PORTFOLIO</p>
+          <h1 id="site-title">naoiw</h1>
+          <p className="intro-description">
+            個人で制作・公開しているWebアプリケーションをまとめています。
+          </p>
+        </section>
+        <ProjectGallery />
+      </main>
+
+      <footer className="site-footer">
+        <span>© {new Date().getFullYear()} naoiw</span>
+        <a href="https://github.com/naoiw/naoiw.github.io" target="_blank" rel="noopener noreferrer">
+          Source on GitHub ↗
+        </a>
+      </footer>
+    </div>
   )
 }

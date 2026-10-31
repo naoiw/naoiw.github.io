@@ -1,0 +1,66 @@
+[
+  {
+    "id": "market-tracker",
+    "name": "Market Tracker",
+    "description": "株価指数・為替・暗号資産の価格と推移を表示するダッシュボード。",
+    "category": "dashboard",
+    "initials": "MT",
+    "url": "https://naoiw.github.io/market-tracker/",
+    "repository": "https://github.com/naoiw/market-tracker"
+  },
+  {
+    "id": "switchbot-logger",
+    "name": "SwitchBot Logger",
+    "description": "室内の温度・湿度・CO₂濃度を記録し、時系列グラフで確認。",
+    "category": "dashboard",
+    "initials": "SL",
+    "url": "https://naoiw.github.io/switchbot-logger/",
+    "repository": "https://github.com/naoiw/switchbot-logger"
+  },
+  {
+    "id": "big3-record",
+    "name": "BIG3 Record",
+    "description": "ベンチプレス・スクワット・デッドリフトと体重の記録を可視化。",
+    "category": "dashboard",
+    "initials": "B3",
+    "url": "https://naoiw.github.io/big3-record/",
+    "repository": "https://github.com/naoiw/big3-record"
+  },
+  {
+    "id": "sudoku-solver",
+    "name": "Sudoku Solver",
+    "description": "数独の入力・重複チェック・解答をブラウザ上で実行。",
+    "category": "tool",
+    "initials": "09",
+    "url": "https://naoiw.github.io/sudoku-solver/",
+    "repository": "https://github.com/naoiw/sudoku-solver"
+  },
+  {
+    "id": "react-gui-tool",
+    "name": "React GUI Tool",
+    "description": "Web Serial APIで取得したシリアルデータを波形表示。",
+    "category": "tool",
+    "initials": "RG",
+    "url": "https://naoiw.github.io/react-gui-tool/",
+    "repository": "https://github.com/naoiw/react-gui-tool"
+  },
+  {
+    "id": "c17-code-generator",
+    "name": "S1C17 Code Generator",
+    "description": "エプソン製C17マイコンの設定とコード生成を補助するツール。",
+    "category": "tool",
+    "initials": "C7",
+    "url": "https://c17-code-generator.vercel.app/",
+    "repository": "https://github.com/naoiw/c17-code-generator",
+    "status": "開発中"
+  },
+  {
+    "id": "coffee-clock-view",
+    "name": "Coffee Clock",
+    "description": "CoffeeScriptで制作した、リングとアニメーションによる時計。",
+    "category": "experiment",
+    "initials": "CC",
+    "url": "https://naoiw.github.io/coffee-clock-view/",
+    "repository": "https://github.com/naoiw/coffee-clock-view"
+  }
+]
