@@ -63,3 +63,4 @@ pnpm build   # 静的ファイルを out/ に生成
 - [画面・作品データ仕様](docs/SPEC.md)
 - [開発・作品追加手順](docs/DEVELOPMENT.md)
 - [デプロイ構成](docs/DEPLOYMENT.md)
+- [複数サイトのUI共通仕様](docs/UI_CONSISTENCY.md)
