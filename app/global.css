@@ -48,6 +48,8 @@ a:focus-visible, button:focus-visible {
 
 .site-shell {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background:
     radial-gradient(ellipse 65% 27% at 75% 0%, rgba(35, 93, 111, .24), transparent 80%),
     #0a1120;
@@ -98,8 +100,9 @@ a:focus-visible, button:focus-visible {
 }
 
 .site-main {
+  flex: 1;
   padding-top: 68px;
-  padding-bottom: 100px;
+  padding-bottom: 48px;
 }
 
 .intro {
@@ -340,7 +343,7 @@ a:focus-visible, button:focus-visible {
 
   .site-main {
     padding-top: 51px;
-    padding-bottom: 64px;
+    padding-bottom: 40px;
   }
 
   .intro {
