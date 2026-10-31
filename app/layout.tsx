@@ -1,65 +1,33 @@
 import './global.css'
-import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
-import { Navbar } from './components/nav'
-import Footer from './components/footer'
-import { baseUrl } from './sitemap'
+import type { Metadata, Viewport } from 'next'
+
+const siteUrl = 'https://naoiw.github.io'
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
-  icons: {
-    icon: `${baseUrl}/favicon.ico`,
-  },
-  title: {
-    default: 'naoiw',
-    template: '%s | naoiw',
-  },
-  description: 'naoiw のウェブサイト',
+  metadataBase: new URL(siteUrl),
+  title: 'naoiw | 制作物一覧',
+  description: 'naoiwが制作・公開しているWebアプリケーションの一覧。',
+  alternates: { canonical: '/' },
+  icons: { icon: '/favicon.ico' },
   openGraph: {
-    title: 'naoiw',
-    description: 'naoiw のウェブサイト',
-    url: baseUrl,
+    title: 'naoiw | 制作物一覧',
+    description: '個人で制作・公開しているWebアプリケーションの一覧。',
+    url: siteUrl,
     siteName: 'naoiw',
     locale: 'ja_JP',
     type: 'website',
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
 }
 
-const cx = (...classes) => classes.filter(Boolean).join(' ')
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={cx(
-        'text-black bg-white dark:text-white dark:bg-black',
-        GeistSans.variable,
-        GeistMono.variable
-      )}
-    >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Navbar />
-          {children}
-          <Footer />
-        </main>
-      </body>
+    <html lang="ja">
+      <body>{children}</body>
     </html>
   )
 }

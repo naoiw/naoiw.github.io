@@ -1,42 +1,58 @@
-# Portfolio Blog Starter
+# naoiw Portfolio
 
-This is a porfolio site template complete with a blog. Includes:
+個人で制作・公開しているWebアプリケーションの一覧サイトです。ブログを持たない1ページ構成で、作品カードから公開アプリとGitHubリポジトリへ移動できます。
 
-- MDX and Markdown support
-- Optimized for SEO (sitemap, robots, JSON-LD schema)
-- RSS Feed
-- Dynamic OG images
-- Syntax highlighting
-- Tailwind v4
-- Vercel Speed Insights / Web Analytics
-- Geist font
+## 主な機能
 
-## Demo
+- 作品をカード形式で一覧表示
+- ダッシュボード・ツール・実験のカテゴリで絞り込み
+- PC（3列/2列）・スマートフォン（1列）のレスポンシブレイアウト
+- GitHub Pages向け静的サイト、各作品の登録はJSON編集のみ
 
-https://portfolio-blog-starter.vercel.app
+## 公開先
 
-## How to Use
+- 本番: https://naoiw.github.io/ （`main` ブランチ）
+- ソースコード: https://github.com/naoiw/naoiw.github.io
 
-You can choose from one of the following two methods to use this repository:
+## 技術スタック
 
-### One-Click Deploy
+- **TypeScript / React 19 / Next.js 16** — 画面・静的サイト生成
+- **CSS** — レスポンシブデザイン
+- **Node.js 22 / pnpm 9** — 開発・テスト・ビルド
+- **GitHub Actions / GitHub Pages** — 検証・デプロイ
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/blog&project-name=blog&repository-name=blog)
-
-### Clone and Deploy
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
+## ローカル開発
 
 ```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/solutions/blog blog
+corepack enable
+pnpm install --frozen-lockfile
+pnpm dev     # ローカル開発
+pnpm test    # 作品データの検証
+pnpm build   # 静的ファイルを out/ に生成
 ```
 
-Then, run Next.js in development mode:
+`pnpm dev` で起動した開発サーバーのURLをブラウザで開きます。`out/` は生成物でGit管理しません。
 
-```bash
-pnpm dev
-```
+## ブランチ運用
 
-Deploy it to the cloud with [Vercel](https://vercel.com/templates) ([Documentation](https://nextjs.org/docs/app/building-your-application/deploying)).
+1. 変更は `develop` ブランチで行い、`main` は本番公開用とします。
+2. `develop` へのpushとPull Requestではテストとビルドのみ実行します。
+3. 本番反映は **`develop` → `main` のPull Request** で行います。マージ後も `develop` を残し、`main` と同期します。
+4. `main` の更新時のみGitHub Pagesへ公開します。開発用の別URLは現時点では設けません。
+
+## ディレクトリ構成
+
+- `app/page.tsx` — 1ページのトップ画面
+- `app/components/project-gallery.tsx` — カードとカテゴリ切り替え
+- `app/projects.json` — 掲載作品のデータ
+- `app/projects.ts` — 作品データの型とカテゴリ定義
+- `app/global.css` — 共通・レスポンシブスタイル
+- `tests/` — 作品データのバリデーション
+- `.github/workflows/` — 検証と公開
+- `docs/` — 仕様・開発・デプロイの詳細
+
+## ドキュメント
+
+- [画面・作品データ仕様](docs/SPEC.md)
+- [開発・作品追加手順](docs/DEVELOPMENT.md)
+- [デプロイ構成](docs/DEPLOYMENT.md)

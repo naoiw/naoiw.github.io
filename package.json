@@ -1,23 +1,22 @@
 {
+  "name": "naoiw-portfolio",
   "private": true,
+  "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
+    "test": "node --test tests/*.test.mjs",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "4.0.0-alpha.13",
+    "next": "^16.0.10",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
+  },
+  "devDependencies": {
     "@types/node": "20.11.17",
     "@types/react": "18.2.55",
     "@types/react-dom": "18.2.19",
-    "geist": "1.2.2",
-    "next": "^16.0.10",
-    "next-mdx-remote": "^4.4.1",
-    "postcss": "^8.4.35",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1",
-    "sugar-high": "^0.6.0",
-    "tailwindcss": "4.0.0-alpha.13",
     "typescript": "^5"
   }
 }
