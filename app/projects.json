@@ -62,5 +62,14 @@
     "initials": "CC",
     "url": "https://naoiw.github.io/coffee-clock-view/",
     "repository": "https://github.com/naoiw/coffee-clock-view"
+  },
+  {
+    "id": "audio-visualizer",
+    "name": "Audio Visualizer",
+    "description": "タブ共有で取得した音声をFFT解析し、周波数スペクトラムをリアルタイム表示。",
+    "category": "experiment",
+    "initials": "AV",
+    "url": "https://naoiw.github.io/audio-visualizer/",
+    "repository": "https://github.com/naoiw/audio-visualizer"
   }
 ]
