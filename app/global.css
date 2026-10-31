@@ -62,12 +62,9 @@ a:focus-visible, button:focus-visible {
   padding-right: var(--chrome-gutter);
 }
 
-.site-header {
-  border-bottom: 1px solid #233248;
-}
-
 .header-inner {
   min-height: var(--chrome-header-height);
+  border-bottom: 1px solid #233248;
   display: flex;
   align-items: center;
   gap: 16px;
