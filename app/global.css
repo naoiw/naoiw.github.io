@@ -1,6 +1,14 @@
 :root {
+  /* Keep these site-chrome tokens aligned across the five naoiw sites. */
+  --chrome-font: Inter, "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, system-ui, sans-serif;
+  --chrome-width: 1180px;
+  --chrome-gutter: 28px;
+  --chrome-header-height: 78px;
+  --chrome-brand-size: 16px;
+  --chrome-caption-size: 11px;
+  --chrome-footer-size: 12px;
   color-scheme: dark;
-  font-family: Inter, "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, system-ui, sans-serif;
+  font-family: var(--chrome-font);
   background: #0a1120;
   color: #edf3fb;
   font-synthesis: none;
@@ -46,10 +54,10 @@ a:focus-visible, button:focus-visible {
 }
 
 .header-inner, .site-main, .site-footer {
-  width: min(100%, 1180px);
+  width: min(100%, var(--chrome-width));
   margin: 0 auto;
-  padding-left: 28px;
-  padding-right: 28px;
+  padding-left: var(--chrome-gutter);
+  padding-right: var(--chrome-gutter);
 }
 
 .site-header {
@@ -57,7 +65,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .header-inner {
-  min-height: 78px;
+  min-height: var(--chrome-header-height);
   display: flex;
   align-items: center;
   gap: 16px;
@@ -68,7 +76,7 @@ a:focus-visible, button:focus-visible {
   align-items: center;
   gap: 11px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: var(--chrome-brand-size);
   font-weight: 800;
   letter-spacing: .02em;
 }
@@ -303,7 +311,9 @@ a:focus-visible, button:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  font-size: 12px;
+  font-size: var(--chrome-footer-size);
+  font-weight: 500;
+  letter-spacing: .02em;
   color: #829bb0;
 }
 
@@ -320,12 +330,12 @@ a:focus-visible, button:focus-visible {
 
 @media (max-width: 620px) {
   .header-inner, .site-main, .site-footer {
-    padding-left: 17px;
-    padding-right: 17px;
+    padding-left: var(--chrome-gutter);
+    padding-right: var(--chrome-gutter);
   }
 
   .header-inner {
-    min-height: 67px;
+    min-height: var(--chrome-header-height);
   }
 
   .site-main {
@@ -391,4 +401,9 @@ a:focus-visible, button:focus-visible {
     transform: none;
   }
 
+}
+
+/* Shared mobile site-chrome sizing. */
+@media (max-width: 620px) {
+  :root { --chrome-gutter: 17px; --chrome-header-height: 67px; }
 }
