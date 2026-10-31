@@ -1,11 +1,13 @@
 import { ProjectGallery } from './components/project-gallery'
 
+const homeHref = process.env.NEXT_PUBLIC_BASE_PATH === '/develop' ? '/develop/' : '/'
+
 export default function Page() {
   return (
     <div className="site-shell">
       <header className="site-header">
         <div className="header-inner">
-          <a className="site-brand" href="/" aria-label="naoiw ホーム">
+          <a className="site-brand" href={homeHref} aria-label="naoiw ホーム">
             <span className="brand-mark" aria-hidden="true">n</span>
             <span>naoiw</span>
           </a>

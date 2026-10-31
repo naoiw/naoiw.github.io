@@ -11,8 +11,12 @@
 
 ## 公開先
 
-- 本番: https://naoiw.github.io/ （`main` ブランチ）
-- ソースコード: https://github.com/naoiw/naoiw.github.io
+| 環境 | ブランチ | URL |
+| --- | --- | --- |
+| 本番 | `main` | https://naoiw.github.io/ |
+| 開発プレビュー | `develop` | https://naoiw.github.io/develop/ |
+
+本番と開発プレビューは、1つのGitHub Pagesサイト（`github-pages`環境）の別々のパスで公開します。開発版へのpush後、検証成功を条件に両方をビルドして再デプロイします。
 
 ## 技術スタック
 
@@ -35,10 +39,11 @@ pnpm build   # 静的ファイルを out/ に生成
 
 ## ブランチ運用
 
-1. 変更は `develop` ブランチで行い、`main` は本番公開用とします。
-2. `develop` へのpushとPull Requestではテストとビルドのみ実行します。
-3. 本番反映は **`develop` → `main` のPull Request** で行います。マージ後も `develop` を残し、`main` と同期します。
-4. `main` の更新時のみGitHub Pagesへ公開します。開発用の別URLは現時点では設けません。
+1. 通常の変更は `develop` ブランチで行い、`main` は本番公開用とします。
+2. `develop` へのpushはテストとプレビュー用ビルドを実行し、成功すると `main` 側のデプロイワークフローが起動します。
+3. デプロイ時には `main` をルート `/`、検証済みの `develop` を `/develop/` に配置し、**1つのGitHub Pagesサイトとして公開**します。
+4. 本番反映は **`develop` → `main` のPull Request** で行います。PRでは検証のみ実行し、デプロイしません。
+5. マージ後も `develop` は残し、`main` と同期して使います。
 
 ## ディレクトリ構成
 
@@ -48,7 +53,7 @@ pnpm build   # 静的ファイルを out/ に生成
 - `app/projects.ts` — 作品データの型とカテゴリ定義
 - `app/global.css` — 共通・レスポンシブスタイル
 - `tests/` — 作品データのバリデーション
-- `.github/workflows/` — 検証と公開
+- `.github/workflows/` — `develop`検証と本番・プレビュー統合デプロイ
 - `docs/` — 仕様・開発・デプロイの詳細
 
 ## ドキュメント
