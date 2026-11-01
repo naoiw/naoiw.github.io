@@ -73,6 +73,15 @@
     "repository": "https://github.com/naoiw/cycling-map"
   },
   {
+    "id": "saizeriya-order",
+    "name": "Saizeriya Order",
+    "description": "サイゼリヤの料理写真と商品名から4桁の注文番号を当てる非公式クイズ。ギャラリーで番号も確認可能。",
+    "category": "game",
+    "initials": "SO",
+    "url": "https://naoiw.github.io/saizeriya-order/",
+    "repository": "https://github.com/naoiw/saizeriya-order"
+  },
+  {
     "id": "coffee-clock-view",
     "name": "Coffee Clock",
     "description": "CoffeeScriptで制作した、リングとアニメーションによる時計。",
