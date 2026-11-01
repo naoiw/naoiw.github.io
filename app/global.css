@@ -246,6 +246,11 @@ a:focus-visible, button:focus-visible {
   color: #a4c7ff;
 }
 
+.project-card__mark--game {
+  background: #4b392b;
+  color: #ffd39a;
+}
+
 .project-card__mark--experiment {
   background: #4a335d;
   color: #e0c0fb;
