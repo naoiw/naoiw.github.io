@@ -55,6 +55,15 @@
     "status": "開発中"
   },
   {
+    "id": "photo-editor",
+    "name": "Photo Editor",
+    "description": "画像のトリミングや背景・フレームの合成をブラウザ上で行うツール。",
+    "category": "tool",
+    "initials": "PE",
+    "url": "https://naoiw.github.io/photo-editor/",
+    "repository": "https://github.com/naoiw/photo-editor"
+  },
+  {
     "id": "coffee-clock-view",
     "name": "Coffee Clock",
     "description": "CoffeeScriptで制作した、リングとアニメーションによる時計。",
