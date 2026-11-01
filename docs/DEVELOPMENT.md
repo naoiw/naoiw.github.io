@@ -37,7 +37,7 @@ Windows PowerShellでは`$env:NEXT_PUBLIC_BASE_PATH='/develop'; pnpm build`と�
 4. `pnpm test`と`pnpm build`を実行し、PC・スマートフォン幅で表示を確認する。
 5. `develop`で変更し、`main`向けPRを作成する。
 
-新しい分類を増やす場合のみ、`app/projects.ts`の型・ラベル定義とCSSの対応を追加する。
+新しい分類を増やす場合は、`app/projects.ts`の型・ラベル定義、`app/global.css`のカード配色、`tests/projects.test.mjs`の許容カテゴリ、`docs/SPEC.md`の仕様も同時に更新する。
 
 ## 表示の修正
 

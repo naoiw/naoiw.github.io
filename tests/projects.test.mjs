@@ -5,7 +5,7 @@ import test from 'node:test'
 const projects = JSON.parse(
   readFileSync(new URL('../app/projects.json', import.meta.url), 'utf8'),
 )
-const categories = new Set(['dashboard', 'tool', 'experiment'])
+const categories = new Set(['dashboard', 'tool', 'game', 'experiment'])
 
 function httpsUrl(value) {
   assert.equal(typeof value, 'string')
