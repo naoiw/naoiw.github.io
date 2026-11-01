@@ -4,6 +4,7 @@ import rawProjects from './projects.json'
 export const categoryLabels = {
   dashboard: 'ダッシュボード',
   tool: 'ツール',
+  game: 'ゲーム',
   experiment: '実験・その他',
 } as const
 
