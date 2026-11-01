@@ -64,6 +64,15 @@
     "repository": "https://github.com/naoiw/photo-editor"
   },
   {
+    "id": "cycling-map",
+    "name": "Cycling Map",
+    "description": "GPX・TCX形式のサイクリング走行記録を読み込み、地図上に経路や距離を表示。",
+    "category": "tool",
+    "initials": "CM",
+    "url": "https://naoiw.github.io/cycling-map/",
+    "repository": "https://github.com/naoiw/cycling-map"
+  },
+  {
     "id": "coffee-clock-view",
     "name": "Coffee Clock",
     "description": "CoffeeScriptで制作した、リングとアニメーションによる時計。",
