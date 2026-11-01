@@ -332,7 +332,10 @@ a:focus-visible, button:focus-visible {
 .site-footer::before { top: 0; }
 
 .site-footer a {
+  margin-left: auto;
+  color: #b3c4d8;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 @media (max-width: 940px) {
