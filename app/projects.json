@@ -27,6 +27,16 @@
     "repository": "https://github.com/naoiw/big3-record"
   },
   {
+    "id": "world-weather",
+    "name": "World Weather",
+    "description": "3D地球儀を回転・ズームして世界各地を眺めるダッシュボード。気象情報の表示は開発中。",
+    "category": "dashboard",
+    "initials": "WW",
+    "url": "https://naoiw.github.io/world-weather/",
+    "repository": "https://github.com/naoiw/world-weather",
+    "status": "開発中"
+  },
+  {
     "id": "sudoku-solver",
     "name": "Sudoku Solver",
     "description": "数独の入力・重複チェック・解答をブラウザ上で実行。",
