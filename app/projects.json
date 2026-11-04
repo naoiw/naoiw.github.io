@@ -36,6 +36,15 @@
     "repository": "https://github.com/naoiw/world-weather"
   },
   {
+    "id": "iss-tracker",
+    "name": "ISS Tracker",
+    "description": "ISSの現在位置と前後約90分の軌道を3D地球儀に表示。位置情報を定期取得して追跡。",
+    "category": "dashboard",
+    "initials": "IT",
+    "url": "https://naoiw.github.io/iss-tracker/",
+    "repository": "https://github.com/naoiw/iss-tracker"
+  },
+  {
     "id": "sudoku-solver",
     "name": "Sudoku Solver",
     "description": "数独の入力・重複チェック・解答をブラウザ上で実行。",
