@@ -91,6 +91,15 @@
     "repository": "https://github.com/naoiw/cycling-map"
   },
   {
+    "id": "stl-viewer",
+    "name": "STL Viewer",
+    "description": "STLファイルやサンプルの3Dモデルを読み込み、回転・拡大縮小して確認できるThree.jsビュワー。",
+    "category": "tool",
+    "initials": "STL",
+    "url": "https://naoiw.github.io/stl-viewer/",
+    "repository": "https://github.com/naoiw/stl-viewer"
+  },
+  {
     "id": "saizeriya-order",
     "name": "Saizeriya Order",
     "description": "サイゼリヤの料理写真と商品名から4桁の注文番号を当てる非公式クイズ。ギャラリーで番号も確認可能。",
