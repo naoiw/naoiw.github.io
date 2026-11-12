@@ -22,13 +22,13 @@
 
 - **TypeScript / React 19 / Next.js 16** — 画面・静的サイト生成
 - **CSS** — レスポンシブデザイン
-- **Node.js 22 / pnpm 9** — 開発・テスト・ビルド
+- **Node.js 26 / pnpm 9** — 開発・テスト・ビルド
 - **GitHub Actions / GitHub Pages** — 検証・デプロイ
 
 ## ローカル開発
 
 ```bash
-corepack enable
+npm install --global pnpm@9
 pnpm install --frozen-lockfile
 pnpm dev     # ローカル開発
 pnpm test    # 作品データの検証
