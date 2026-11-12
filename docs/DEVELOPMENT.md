@@ -2,10 +2,10 @@
 
 ## 環境
 
-Node.js 22、pnpm 9、Next.js 16を使用。変更前に`main`の最新状態を取り込み、`develop`で作業する。
+Node.js 26、pnpm 9、Next.js 16を使用。変更前に`main`の最新状態を取り込み、`develop`で作業する。
 
 ```bash
-corepack enable
+npm install --global pnpm@9
 pnpm install --frozen-lockfile
 pnpm dev
 pnpm test
