@@ -23,7 +23,7 @@
 `/blog/example/` ページと記事一覧が生成されます。公開日時はファイルの作成日ではなく、
 記事先頭の `date` を使用します（同日はファイル名順）。
 
-```markdown
+~~~~markdown
 ---
 title: "技術メモのタイトル"
 date: "2026-11-17"
@@ -41,7 +41,7 @@ Markdownで本文を書きます。
 ```ts
 console.log('hello')
 ```
-```
+~~~~
 
 - ファイル名は小文字英数字とハイフン（`example-post.md`）。ファイル名をURLに利用
 - `title`、`date`、`description`は必須。`updated`と`tags`は任意
