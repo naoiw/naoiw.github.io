@@ -21,6 +21,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Prevent horizontal jumps between short and scrollable pages. */
+  scrollbar-gutter: stable;
 }
 
 body {
