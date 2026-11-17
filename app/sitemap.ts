@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_ORIGIN}/blog/`, changeFrequency: 'weekly', priority: 0.7 },
     ...getAllPosts().map((post) => ({
       url: `${SITE_ORIGIN}/blog/${post.slug}/`,
-      lastModified: `new Date(`${post.updated ?? post.date}T00:00:00Z`),
+      lastModified: new Date((post.updated ?? post.date) + 'T00:00:00Z'),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
