@@ -429,3 +429,57 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 620px) {
   :root { --chrome-gutter: 17px; --chrome-header-height: 67px; }
 }
+
+
+/* Markdown blog: shared site navigation, article list and readable prose. */
+.site-navigation { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.site-navigation a { display: inline-flex; align-items: center; min-height: 42px; padding: 9px 14px; border-radius: 9px; color: #a6bdd0; font-size: 13px; font-weight: 650; text-decoration: none; }
+.site-navigation a:hover, .site-navigation a[aria-current="page"] { color: #83ebd6; background: #172c3e; }
+.blog-intro { max-width: 780px; margin-bottom: 42px; }
+.blog-intro h1 { margin: 0; font-size: clamp(36px, 6vw, 52px); letter-spacing: -.04em; }
+.blog-intro > p:last-child { margin: 16px 0 0; color: #a2b8cd; line-height: 1.85; }
+.post-list { display: grid; gap: 14px; max-width: 900px; }
+.post-card { border: 1px solid #29394f; border-radius: 14px; background: #111f32; overflow: hidden; }
+.post-card:hover, .post-card:focus-within { border-color: #67bcae; }
+.post-card__link { display: block; padding: 25px 28px; text-decoration: none; }
+.post-card__link h2 { font-size: 21px; margin: 10px 0; line-height: 1.45; }
+.post-card__link p { margin: 0; color: #9fb2c5; line-height: 1.8; font-size: 14px; }
+.post-date { color: #79dfcd; font-size: 12px; letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+.post-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.post-tags span { color: #a5c7d6; background: #1b3349; border-radius: 6px; font-size: 11px; padding: 5px 9px; }
+.post-article { max-width: 880px; margin: 0 auto; }
+.post-back { display: inline-flex; align-items: center; min-height: 42px; margin-bottom: 30px; color: #91decf; text-decoration: none; font-size: 13px; }
+.post-article__header { border-bottom: 1px solid #2a3a4b; padding-bottom: 34px; margin-bottom: 36px; }
+.post-article__header h1 { font-size: clamp(32px, 5vw, 46px); line-height: 1.35; letter-spacing: -.035em; margin: 12px 0 14px; }
+.post-article__description { color: #aac0d1; font-size: 15px; line-height: 1.8; }
+.post-article__meta { display: flex; flex-wrap: wrap; gap: 16px; color: #85a3b9; font-size: 12px; }
+.post-article__footer { margin-top: 46px; padding-top: 22px; border-top: 1px solid #2a3a4b; }
+.post-article__footer a { color: #91decf; }
+.markdown-content { color: #d4e0eb; font-size: 15px; line-height: 1.95; overflow-wrap: anywhere; }
+.markdown-content h1, .markdown-content h2, .markdown-content h3, .markdown-content h4 { color: #f3f7fc; line-height: 1.45; }
+.markdown-content h1 { font-size: 28px; margin: 42px 0 18px; }
+.markdown-content h2 { font-size: 24px; margin: 46px 0 17px; padding-bottom: 10px; border-bottom: 1px solid #2b3e52; }
+.markdown-content h3 { font-size: 19px; margin: 34px 0 14px; }
+.markdown-content p { margin: 16px 0; }
+.markdown-content a { color: #83e5d4; text-underline-offset: 3px; }
+.markdown-content ul, .markdown-content ol { padding-left: 25px; margin: 18px 0; }
+.markdown-content li { margin: 6px 0; }
+.markdown-content :not(pre) > code { padding: 3px 6px; border-radius: 5px; background: #21334a; color: #ccefe7; font-size: .9em; }
+.markdown-content pre { border: 1px solid #2b3e55; border-radius: 12px; background: #0b1729; padding: 20px; overflow-x: auto; line-height: 1.65; }
+.markdown-content pre code { white-space: pre; font: 13px/1.65 ui-monospace, SFMono-Regular, Consolas, monospace; color: #d1e6ed; }
+.markdown-content blockquote { margin: 24px 0; padding: 2px 22px; border-left: 3px solid #65caba; background: #14273b; color: #b7cbda; }
+.markdown-content hr { border: 0; border-top: 1px solid #2a3c50; margin: 35px 0; }
+.markdown-content img { display: block; max-width: 100%; height: auto; border-radius: 10px; margin: 22px auto; }
+.markdown-table-wrap { overflow-x: auto; }
+.markdown-content table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 320px; margin: 20px 0; }
+.markdown-content th, .markdown-content td { padding: 10px 12px; border: 1px solid #2b4054; text-align: left; }
+.markdown-content th { background: #1b2d42; color: #e9f5fa; }
+.markdown-content td { background: #111f32; }
+@media (max-width: 620px) {
+  .site-navigation { gap: 1px; }
+  .site-navigation a { padding: 8px 9px; font-size: 12px; }
+  .post-card__link { padding: 19px; }
+  .post-card__link h2 { font-size: 18px; }
+  .markdown-content { font-size: 14px; }
+  .markdown-content pre { padding: 13px; }
+}
