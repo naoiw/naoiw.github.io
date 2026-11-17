@@ -57,4 +57,35 @@ Windows PowerShellでは`$env:NEXT_PUBLIC_BASE_PATH='/develop'; pnpm build`と�
 - キーボードだけでフィルター・リンクにアクセスできること
 - 重複した作品ID・URLがないこと
 - `/develop/`でJS・CSSが `/develop/_next/` から取得されること
-- ブログ・RSS・タグの新しいリンクが残っていないこと
+- ブログ一覧・記事ページのリンクが本番／プレビュー双方で正しいこと
+
+
+## 技術メモを追加・更新する
+
+1. `content/posts/` に `my-note.md` を作成する（slugは小文字英数字とハイフンのみ）。
+2. 先頭にFront Matterの`title`、`date`、`description`を書き、必要なら`updated`と`tags`を追加する。
+3. 本文はMarkdownで記載。見出し・段落・強調・リスト・表・引用・リンク・画像・コードブロックに対応。
+4. `pnpm test`と`pnpm build`で確認し、`develop`へコミット・pushする。
+5. `https://naoiw.github.io/develop/blog/`から記事を確認して、承認後に`main`へマージする。
+
+```markdown
+---
+title: "記事タイトル"
+date: "2026-11-17"
+description: "短い概要"
+tags:
+  - Next.js
+  - Markdown
+---
+
+## 本文の見出し
+
+本文を書きます。
+```
+
+- ファイル名で記事URLが決まる。タイトルを変更してもURLを変えたくなければファイル名を維持する
+- 日付は明示した`date`順。`updated`は更新表示とサイトマップの更新日時に使う
+- 画像を記事内に表示するなら`public/images/posts/`に置き、`![代替テキスト](/images/posts/example.png)`で参照
+- 記事を消すと次の静的ビルドからURLもなくなる
+- 外部Markdownライブラリは未導入。生HTMLやネストしたリストなど複雑な構文は非対応
+- サーバー・DB・GitHub APIは不要。GitHub ActionsがbuildしたHTMLを配信する
