@@ -41,3 +41,6 @@ jobs:
         run: |
           test -f out/index.html
           grep -q '/develop/_next/' out/index.html
+          test -f out/blog/index.html
+          test -f out/blog/markdown-blog-guide/index.html
+          grep -q '/develop/blog/markdown-blog-guide/' out/blog/index.html
