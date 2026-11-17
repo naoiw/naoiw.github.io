@@ -21,6 +21,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Prevent horizontal jumps between short and scrollable pages. */
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -435,10 +437,10 @@ a:focus-visible, button:focus-visible {
 .site-navigation { display: flex; align-items: center; gap: 8px; margin-left: auto; }
 .site-navigation a { display: inline-flex; align-items: center; min-height: 42px; padding: 9px 14px; border-radius: 9px; color: #a6bdd0; font-size: 13px; font-weight: 650; text-decoration: none; }
 .site-navigation a:hover, .site-navigation a[aria-current="page"] { color: #83ebd6; background: #172c3e; }
-.blog-intro { max-width: 900px; margin: 0 auto 42px; }
+.blog-intro { max-width: 780px; margin-bottom: 42px; }
 .blog-intro h1 { margin: 0; font-size: clamp(36px, 6vw, 52px); letter-spacing: -.04em; }
 .blog-intro > p:last-child { margin: 16px 0 0; color: #a2b8cd; line-height: 1.85; }
-.post-list { display: grid; gap: 14px; max-width: 900px; margin: 0 auto; }
+.post-list { display: grid; gap: 14px; max-width: 900px; }
 .post-card { border: 1px solid #29394f; border-radius: 14px; background: #111f32; overflow: hidden; }
 .post-card:hover, .post-card:focus-within { border-color: #67bcae; }
 .post-card__link { display: block; padding: 25px 28px; text-decoration: none; }
