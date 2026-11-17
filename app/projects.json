@@ -118,6 +118,33 @@
     "repository": "https://github.com/naoiw/coffee-clock-view"
   },
   {
+    "id": "rust-clock-view",
+    "name": "Rust Clock",
+    "description": "RustとWebAssemblyで時刻を描画。3本のリングと粒子エフェクトを備えたブラウザ時計。",
+    "category": "experiment",
+    "initials": "RC",
+    "url": "https://naoiw.github.io/rust-clock-view/",
+    "repository": "https://github.com/naoiw/rust-clock-view"
+  },
+  {
+    "id": "nim-clock-view",
+    "name": "Nim Clock",
+    "description": "NimのJavaScriptバックエンドで制作した、リングと粒子アニメーションの時計。",
+    "category": "experiment",
+    "initials": "NC",
+    "url": "https://naoiw.github.io/nim-clock-view/",
+    "repository": "https://github.com/naoiw/nim-clock-view"
+  },
+  {
+    "id": "livescript-clock-view",
+    "name": "LiveScript Clock",
+    "description": "LiveScriptで実装した、3本のリングと粒子エフェクトで時刻を表す時計。",
+    "category": "experiment",
+    "initials": "LC",
+    "url": "https://naoiw.github.io/livescript-clock-view/",
+    "repository": "https://github.com/naoiw/livescript-clock-view"
+  },
+  {
     "id": "audio-visualizer",
     "name": "Audio Visualizer",
     "description": "タブ共有で取得した音声をFFT解析し、周波数スペクトラムをリアルタイム表示。",
