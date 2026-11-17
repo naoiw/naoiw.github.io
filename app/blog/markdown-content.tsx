@@ -15,7 +15,7 @@ function inline(source: string): ReactNode[] {
   const tokens = /(!?\[[^\]]+\]\([^)]+\)|`[^`\n]+`|\*\*[^*\n]+\*\*|~~[^~\n]+~~|\*[^*\n]+\*)/g
   let last = 0
   for (const match of source.matchAll(tokens)) {
-    const index = match.index
+    const index = match.index ?? last
     if (index > last) nodes.push(source.slice(last, index))
     const value = match[0]
     const key = String(index)
