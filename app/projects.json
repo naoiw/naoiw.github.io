@@ -100,6 +100,15 @@
     "repository": "https://github.com/naoiw/stl-viewer"
   },
   {
+    "id": "japan-geometry",
+    "name": "Japan Geometry",
+    "description": "国土地理院の標高データを使って日本列島の地形を3D表示。視点操作や標高の強調倍率切り替えに対応。",
+    "category": "tool",
+    "initials": "JG",
+    "url": "https://naoiw.github.io/japan-geometry/",
+    "repository": "https://github.com/naoiw/japan-geometry"
+  },
+  {
     "id": "saizeriya-order",
     "name": "Saizeriya Order",
     "description": "サイゼリヤの料理写真と商品名から4桁の注文番号を当てる非公式クイズ。ギャラリーで番号も確認可能。",
