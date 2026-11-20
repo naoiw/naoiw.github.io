@@ -2,7 +2,7 @@ name: Validate develop
 
 on:
   push:
-    branches: [develop]
+    branches: [main, develop]
   pull_request:
     branches: [main, develop]
 
@@ -14,25 +14,33 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  check:
+  shared-node-ci:
+    uses: naoiw/.github/.github/workflows/reusable-node-ci.yml@00047e65d7e53551e2644df02d2f22743ea2c471
+    with:
+      package-manager: pnpm
+      node-version: "26"
+      pnpm-version: "9"
+      run-lint: false # No lint script
+      run-typecheck: false # No typecheck script
+      run-tests: true
+      run-build: true
+
+  # Validate the develop-only Next.js base path separately: the shared CI
+  # intentionally builds with the default production settings.
+  preview-paths:
+    if: github.event_name == 'pull_request' || github.ref_name == 'develop'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
         with:
-          version: 9
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+          version: "9"
+          run_install: false
+      - uses: actions/setup-node@v7
         with:
-          node-version-file: .nvmrc
-          check-latest: true
-          cache: pnpm
-      - name: Install dependencies
+          node-version: "26"
+      - name: Install locked dependencies
         run: pnpm install --frozen-lockfile
-      - name: Test
-        run: pnpm test
       - name: Build preview with /develop base path
         env:
           NEXT_PUBLIC_BASE_PATH: /develop
