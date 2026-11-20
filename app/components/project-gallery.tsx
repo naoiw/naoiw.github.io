@@ -1,16 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { categories, projects, type ProjectCategory } from '../projects'
+import { categories, matchesProjectFilter, projects, type ProjectFilter } from '../projects'
 import { ProjectCard } from './project-card'
-
-type ProjectFilter = 'all' | ProjectCategory
 
 export function ProjectGallery() {
   const [filter, setFilter] = useState<ProjectFilter>('all')
-  const visibleProjects = filter === 'all'
-    ? projects
-    : projects.filter((project) => project.category === filter)
+  const visibleProjects = projects.filter((project) => matchesProjectFilter(project, filter))
 
   return (
     <section id="projects" className="projects-section" aria-labelledby="projects-title">
@@ -24,7 +20,7 @@ export function ProjectGallery() {
         </p>
       </div>
 
-      <div className="filters" role="group" aria-label="制作物の分類">
+      <div className="filters" role="group" aria-label="制作物の分類・開発状況">
         {categories.map((category) => (
           <button
             key={category.id}

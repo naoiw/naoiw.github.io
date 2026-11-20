@@ -5,6 +5,8 @@ type ProjectCardProps = {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const projectCategories = [project.category, ...(project.additionalCategories ?? [])]
+
   return (
     <article className="project-card">
       <a
@@ -30,9 +32,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </a>
 
       <div className="project-card__footer">
-        <span className="project-card__category">
-          {categoryLabels[project.category]}
-        </span>
+        {projectCategories.map((category) => (
+          <span key={category} className="project-card__category">
+            {categoryLabels[category]}
+          </span>
+        ))}
         {project.status && <span className="project-card__status">{project.status}</span>}
         <a
           className="source-link"

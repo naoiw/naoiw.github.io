@@ -88,7 +88,10 @@
     "category": "tool",
     "initials": "CM",
     "url": "https://naoiw.github.io/cycling-map/",
-    "repository": "https://github.com/naoiw/cycling-map"
+    "repository": "https://github.com/naoiw/cycling-map",
+    "additionalCategories": [
+      "experiment"
+    ]
   },
   {
     "id": "stl-viewer",
@@ -106,7 +109,10 @@
     "category": "tool",
     "initials": "JG",
     "url": "https://naoiw.github.io/japan-geometry/",
-    "repository": "https://github.com/naoiw/japan-geometry"
+    "repository": "https://github.com/naoiw/japan-geometry",
+    "additionalCategories": [
+      "experiment"
+    ]
   },
   {
     "id": "saizeriya-order",
@@ -115,7 +121,17 @@
     "category": "game",
     "initials": "SO",
     "url": "https://naoiw.github.io/saizeriya-order/",
-    "repository": "https://github.com/naoiw/saizeriya-order"
+    "repository": "https://github.com/naoiw/saizeriya-order",
+    "status": "開発中"
+  },
+  {
+    "id": "geo-quiz",
+    "name": "Geo Quiz",
+    "description": "世界197か国・地域の地図と国旗を使った地理クイズ。日本語・英語、地域別出題や2D地図・3D地球儀に対応。",
+    "category": "game",
+    "initials": "GQ",
+    "url": "https://naoiw.github.io/geo-quiz/",
+    "repository": "https://github.com/naoiw/geo-quiz"
   },
   {
     "id": "coffee-clock-view",
@@ -161,5 +177,18 @@
     "initials": "AV",
     "url": "https://naoiw.github.io/audio-visualizer/",
     "repository": "https://github.com/naoiw/audio-visualizer"
+  },
+  {
+    "id": "td4",
+    "name": "TD4 Emulator",
+    "description": "4bit CPU「TD4」の動作をブラウザで再現。スイッチ・LED・信号波形・ROM・アセンブラで内部動作を観察。",
+    "category": "experiment",
+    "initials": "TD4",
+    "url": "https://naoiw.github.io/td4/",
+    "repository": "https://github.com/naoiw/td4",
+    "status": "開発中",
+    "additionalCategories": [
+      "tool"
+    ]
   }
 ]
