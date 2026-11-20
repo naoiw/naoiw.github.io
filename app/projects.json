@@ -88,7 +88,10 @@
     "category": "tool",
     "initials": "CM",
     "url": "https://naoiw.github.io/cycling-map/",
-    "repository": "https://github.com/naoiw/cycling-map"
+    "repository": "https://github.com/naoiw/cycling-map",
+    "additionalCategories": [
+      "experiment"
+    ]
   },
   {
     "id": "stl-viewer",
@@ -106,7 +109,10 @@
     "category": "tool",
     "initials": "JG",
     "url": "https://naoiw.github.io/japan-geometry/",
-    "repository": "https://github.com/naoiw/japan-geometry"
+    "repository": "https://github.com/naoiw/japan-geometry",
+    "additionalCategories": [
+      "experiment"
+    ]
   },
   {
     "id": "saizeriya-order",

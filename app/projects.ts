@@ -62,9 +62,9 @@ export const categories: ReadonlyArray<{
   label: string
 }> = [
   { id: 'all', label: 'すべて' },
+  { id: 'in-development', label: developmentStatus },
   ...(Object.keys(categoryLabels) as ProjectCategory[]).map((id) => ({
     id,
     label: categoryLabels[id],
   })),
-  { id: 'in-development', label: developmentStatus },
 ]
