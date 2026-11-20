@@ -17,8 +17,12 @@ naoiwのWebアプリ作品一覧と、Markdownで管理する技術メモを公�
 
 `app/projects.json` の配列で管理。表示順は配列順。
 分類は`dashboard` / `tool` / `game` / `experiment`。
-`id`・`name`・`description`・`category`・`initials`・`url`・`repository`が必須で、
-任意で`status`を指定できる。外部リンクはHTTPS。
+`id`・`name`・`description`・`category`・`initials`・`url`・`repository`が必須。
+`category`は主分類（カードのアイコン色にも使用）。任意の`additionalCategories`に異なる分類を配列で追加できる。
+複数分類の作品は各分類の絞り込み結果に表示し、カードにもすべての分類タグを表示する。分類の重複は禁止。
+任意の`status`はカードのステータスタグに表示する。「開発中」を指定した作品は「開発中」フィルターの対象にもなる。
+「すべて」・4分類・「開発中」は同じ単一選択フィルターとして切り替える（複合AND検索はしない）。
+外部リンクはHTTPS。
 
 ## Markdown記事
 

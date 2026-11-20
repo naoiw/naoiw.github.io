@@ -179,6 +179,9 @@
     "initials": "TD4",
     "url": "https://naoiw.github.io/td4/",
     "repository": "https://github.com/naoiw/td4",
-    "status": "開発中"
+    "status": "開発中",
+    "additionalCategories": [
+      "tool"
+    ]
   }
 ]

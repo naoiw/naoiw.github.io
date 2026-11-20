@@ -30,6 +30,17 @@ test('project catalog has unique IDs and valid metadata', () => {
       assert.ok(project[key].trim(), `Missing ${key}: ${project.id}`)
     }
     assert.ok(categories.has(project.category), `Unknown category: ${project.id}`)
+
+    if (project.additionalCategories !== undefined) {
+      assert.ok(Array.isArray(project.additionalCategories), `Invalid additionalCategories: ${project.id}`)
+      assert.ok(project.additionalCategories.length > 0, `Empty additionalCategories: ${project.id}`)
+      const uniqueCategories = new Set([project.category])
+      for (const category of project.additionalCategories) {
+        assert.ok(categories.has(category), `Unknown additional category: ${project.id}`)
+        assert.ok(!uniqueCategories.has(category), `Duplicate category: ${project.id}`)
+        uniqueCategories.add(category)
+      }
+    }
     assert.match(project.initials, /^[A-Z0-9]{1,3}$/)
 
     if (project.status !== undefined) {
@@ -56,4 +67,16 @@ test('project links are valid HTTPS URLs and are not duplicated', () => {
     destinations.add(destination)
     sources.add(repository.href)
   }
+})
+
+test('TD4 has two category tags and development status can be filtered', () => {
+  const td4 = projects.find((project) => project.id === 'td4')
+  assert.ok(td4)
+  assert.equal(td4.category, 'experiment')
+  assert.deepEqual(td4.additionalCategories, ['tool'])
+  assert.equal(td4.status, '開発中')
+
+  const inDevelopment = projects.filter((project) => project.status === '開発中')
+  assert.ok(inDevelopment.some((project) => project.id === 'td4'))
+  assert.ok(inDevelopment.some((project) => project.id === 'c17-code-generator'))
 })
