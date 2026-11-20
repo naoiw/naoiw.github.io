@@ -35,7 +35,7 @@ export const projects: readonly Project[] = rawProjects.map((project) => {
   }
 
   const additionalCategories: ProjectCategory[] = (
-    'additionalCategories' in project ? project.additionalCategories : []
+    ('additionalCategories' in project ? project.additionalCategories : []) ?? []
   ).map((category: string) => {
     if (!isProjectCategory(category)) {
       throw new Error(`Unknown additional category for project "${project.id}": ${category}`)
