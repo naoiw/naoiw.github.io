@@ -121,7 +121,8 @@
     "category": "game",
     "initials": "SO",
     "url": "https://naoiw.github.io/saizeriya-order/",
-    "repository": "https://github.com/naoiw/saizeriya-order"
+    "repository": "https://github.com/naoiw/saizeriya-order",
+    "status": "開発中"
   },
   {
     "id": "geo-quiz",
