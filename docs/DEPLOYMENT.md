@@ -11,6 +11,13 @@
 
 参照: `sudoku-solver`、`switchbot-logger`と同じ、検証ワークフローからデプロイワークフローを起動する方式。
 
+## 共通CIとPagesの例外
+
+- `Validate develop` は [naoiw/.github の共通Node CI](https://github.com/naoiw/.github/blob/main/.github/workflows/reusable-node-ci.yml) を固定SHAで参照している。Next.jsの `/develop` ビルドは別ジョブで検証する。
+- [react-vite-template](https://github.com/naoiw/react-vite-template) の共有PagesワークフローはVite専用のため本サイトでは使用しない。Next.jsの `deploy.yml` を維持する。
+- `Validate develop` という名前は `workflow_run` の起動条件なので変更しない。成功した同一リポジトリのdevelop pushだけで公開する。
+- 共通workflowの参照SHAを変更するときは [検証済み推奨リリース](https://github.com/naoiw/.github/blob/main/versions/workflows.json) を参照し、PRで本番/プレビュービルドを検証する。
+
 ## ワークフロー
 
 - `.github/workflows/validate-develop.yml` — `develop`へのpushまたはPRでテスト、`/develop`向けビルド、静的資材のパス検証を実施。Pagesの公開権限は付与しない。
