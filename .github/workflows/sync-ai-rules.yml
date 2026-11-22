@@ -1,0 +1,21 @@
+name: Sync naoiw AI rules
+
+on:
+  workflow_dispatch:
+  # 定期的にPRを作る場合は、検証後に次の行を有効化
+  # schedule:
+  #   - cron: '23 5 * * 1'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    uses: naoiw/.github/.github/workflows/reusable-sync-ai-rules.yml@00047e65d7e53551e2644df02d2f22743ea2c471
+
+# Notes:
+# - GitHub Settings > Actions > General: Allow GitHub Actions to create and approve pull requests
+#   must permit PR creation, otherwise use a dedicated GitHub App token/PAT with minimal permissions.
+# - This workflow must be on the default branch for workflow_dispatch to be available.
+# - Existing unmanaged files are not overwritten; update them manually once if needed.

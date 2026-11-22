@@ -52,6 +52,18 @@ console.log('hello')
 
 詳細は [開発手順](docs/DEVELOPMENT.md) を参照してください。
 
+## 共通開発規約と自動化
+
+[naoiw/.github](https://github.com/naoiw/.github) を既定の開発規約とし、[react-vite-template](https://github.com/naoiw/react-vite-template) のAI開発指示・共通CI・依存更新の方針を採用します。**既存のNext.js 16と公開方式は維持**し、Viteアプリには置き換えません。
+
+- `AGENTS.md`、`.cursor/rules/naoiw-default.mdc`、`.github/copilot-instructions.md` に共通AI指示を配置し、`AGENTS.md` に本サイト固有の規則を追記。
+- `.github/workflows/sync-ai-rules.yml` は共通ルール変更を手動で取り込むPRを作成（デフォルトのmainに導入後に実行可能）。
+- `.github/dependabot.yml` はpnpm依存とGitHub Actionsを月次更新確認。minor/patchをグループ化、majorは個別PR。自動マージなし。
+- 短命ブランチから `develop` 宛PR → CI・オンラインプレビュー → 承認後に `main` 宛PRで本番反映。
+- Branch rulesets / Dependabot alerts / ActionsによるPR作成許可などGitHubのSettings項目は**自動設定されません**。
+
+詳細は [開発手順](docs/DEVELOPMENT.md)、[Pages公開方式](docs/DEPLOYMENT.md) を参照。
+
 ## 技術と開発
 
 TypeScript / React 19 / Next.js 16 / Node.js 26 / pnpm 9 / GitHub Actions / GitHub Pages。
@@ -67,7 +79,7 @@ pnpm build
 
 `out/`へ静的サイトを出力。develop向けの静的ビルドは
 `NEXT_PUBLIC_BASE_PATH=/develop pnpm build` で確認できます。
-実装は`develop`で行い、確認後に`main`向けPRを作成してマージします。
+実装は`develop`から短命ブランチを作り、`develop`向けPRで検証します。プレビュー確認後、ユーザーの承認を得て`main`向けPRをマージします。
 
 ## 主なファイル
 
