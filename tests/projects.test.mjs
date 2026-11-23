@@ -81,8 +81,8 @@ test('TD4 has two category tags and development status can be filtered', () => {
   assert.ok(inDevelopment.some((project) => project.id === 'c17-code-generator'))
 })
 
-test('Cycling Map and Japan Geometry are available in both tool and experiment categories', () => {
-  for (const id of ['cycling-map', 'japan-geometry']) {
+test('Projects with tool and experiment tags are discoverable in both categories', () => {
+  for (const id of ['cycling-map', 'japan-geometry', 'web-native-lab']) {
     const project = projects.find((item) => item.id === id)
     assert.ok(project, `Missing project: ${id}`)
     assert.equal(project.category, 'tool')
