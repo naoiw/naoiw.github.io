@@ -115,6 +115,18 @@
     ]
   },
   {
+    "id": "web-native-lab",
+    "name": "Web Native Lab",
+    "description": "HTML・CSS・Web APIの標準機能を、動かせるデモとソースコードで学べるブラウザ実験カタログ。",
+    "category": "tool",
+    "initials": "WN",
+    "url": "https://naoiw.github.io/web-native-lab/",
+    "repository": "https://github.com/naoiw/web-native-lab",
+    "additionalCategories": [
+      "experiment"
+    ]
+  },
+  {
     "id": "saizeriya-order",
     "name": "Saizeriya Order",
     "description": "サイゼリヤの料理写真と商品名から4桁の注文番号を当てる非公式クイズ。ギャラリーで番号も確認可能。",
