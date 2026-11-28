@@ -8,7 +8,7 @@ export default function Page() {
         <p className="eyebrow">PORTFOLIO</p>
         <h1 id="site-title">naoiw</h1>
         <p className="intro-description">
-          個人で制作・公開しているWebアプリケーションをまとめています。
+          個人で制作・公開しているアプリケーションをまとめています。
         </p>
       </section>
       <ProjectGallery />
