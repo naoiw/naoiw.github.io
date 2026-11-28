@@ -127,6 +127,25 @@
     ]
   },
   {
+    "id": "qr-maker",
+    "name": "QR Maker",
+    "description": "テキストやURLからQRコードを生成し、PNG画像として保存できるブラウザツール。",
+    "category": "tool",
+    "initials": "QR",
+    "url": "https://naoiw.github.io/qr-maker/",
+    "repository": "https://github.com/naoiw/qr-maker"
+  },
+  {
+    "id": "music-video-maker",
+    "name": "Music Video Maker",
+    "description": "MP3と画像を合成し、音声フィルタで音質を調整してMP4動画を生成するローカルGUIツール。",
+    "category": "tool",
+    "initials": "MV",
+    "url": "https://github.com/naoiw/music-video-maker",
+    "repository": "https://github.com/naoiw/music-video-maker",
+    "status": "開発中"
+  },
+  {
     "id": "saizeriya-order",
     "name": "Saizeriya Order",
     "description": "サイゼリヤの料理写真と商品名から4桁の注文番号を当てる非公式クイズ。ギャラリーで番号も確認可能。",
@@ -198,7 +217,6 @@
     "initials": "TD4",
     "url": "https://naoiw.github.io/td4/",
     "repository": "https://github.com/naoiw/td4",
-    "status": "開発中",
     "additionalCategories": [
       "tool"
     ]
