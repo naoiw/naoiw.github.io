@@ -69,16 +69,31 @@ test('project links are valid HTTPS URLs and are not duplicated', () => {
   }
 })
 
-test('TD4 has two category tags and development status can be filtered', () => {
+test('TD4 retains both category tags without development status', () => {
   const td4 = projects.find((project) => project.id === 'td4')
   assert.ok(td4)
   assert.equal(td4.category, 'experiment')
   assert.deepEqual(td4.additionalCategories, ['tool'])
-  assert.equal(td4.status, '開発中')
+  assert.equal(td4.status, undefined)
 
   const inDevelopment = projects.filter((project) => project.status === '開発中')
-  assert.ok(inDevelopment.some((project) => project.id === 'td4'))
+  assert.ok(!inDevelopment.some((project) => project.id === 'td4'))
   assert.ok(inDevelopment.some((project) => project.id === 'c17-code-generator'))
+})
+
+test('QR Maker and Music Video Maker have the expected tags and links', () => {
+  const qr = projects.find((project) => project.id === 'qr-maker')
+  const mv = projects.find((project) => project.id === 'music-video-maker')
+  assert.ok(qr)
+  assert.ok(mv)
+  assert.equal(qr.category, 'tool')
+  assert.equal(qr.additionalCategories, undefined)
+  assert.equal(qr.status, undefined)
+  assert.equal(qr.url, 'https://naoiw.github.io/qr-maker/')
+  assert.equal(mv.category, 'tool')
+  assert.equal(mv.additionalCategories, undefined)
+  assert.equal(mv.status, '開発中')
+  assert.equal(mv.url, mv.repository)
 })
 
 test('Projects with tool and experiment tags are discoverable in both categories', () => {
